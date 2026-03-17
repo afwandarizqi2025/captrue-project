@@ -1,0 +1,122 @@
+apillication project masjid raya depok
+#include <iostream>
+#include <windows.h>
+#include <unistd.h> // Untuk sleep (Linux/Mac) atau gunakan Sleep() untuk Windows
+using namespace std;
+
+void clearScreen() {
+    system("cls"); // Windows
+    // system("clear"); // Linux/Mac
+}
+
+void setColor(int color) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
+void resetColor() {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+}
+
+void drawMasjidRayaDepok() {
+    clearScreen();
+    
+    // Warna hijau untuk kubah dan menara
+    setColor(10); // Hijau
+    
+    // Gambar kubah utama
+    cout << "                    .-\"\"\"-.                    " << endl;
+    cout << "                  .'       `.                  " << endl;
+    cout << "                 /   ,     , \\                 " << endl;
+    cout << "                :   /\\     /|  :                " << endl;
+    cout << "                |  :  )   (  : |                " << endl;
+    cout << "                 \\  '._^_.'  /                 " << endl;
+    cout << "                  '.     .'                    " << endl;
+    cout << "                    `-...-'                    " << endl;
+    
+    resetColor();
+    
+    // Atap masjid dengan pola Islam
+    setColor(12); // Merah
+    cout << "     _______________________________     " << endl;
+    cout << "    /                               \\    " << endl;
+    cout << "   /_________________________________\\   " << endl;
+    resetColor();
+    
+    // Dinding utama masjid
+    setColor(8); // Abu-abu
+    for(int i = 0; i < 8; i++) {
+        cout << "  |                                 |  " << endl;
+    }
+    
+    // Pintu masjid
+    cout << "  |    _____           _____         |  " << endl;
+    cout << "  |   |     |         |     |        |  " << endl;
+    cout << "  |   |  *  |    *    |  *  |        |  " << endl;
+    cout << "  |   |_____|         |_____|        |  " << endl;
+    cout << "  |                                 |  " << endl;
+    
+    // Jendela
+    cout << "  |  [===]               [===]       |  " << endl;
+    cout << "  |                                 |  " << endl;
+    resetColor();
+    
+    // Dasar masjid
+    setColor(14); // Kuning
+    cout << "  ==================================  " << endl;
+    resetColor();
+    
+    // Menara kiri
+    setColor(10);
+    cout << "    ||              ||              " << endl;
+    cout << "    ||              ||              " << endl;
+    cout << "    ||              ||              " << endl;
+    cout << "   /||\\            /||\\             " << endl;
+    cout << "  //||\\\\          //||\\\\            " << endl;
+    cout << " ///||\\\\\\        ///||\\\\\\           " << endl;
+    resetColor();
+    
+    cout << endl << endl;
+    
+    // Judul
+    setColor(11); // Cyan
+    cout << "                    MASJID RAYA DEPOK                    " << endl;
+    cout << "                 =================================       " << endl;
+    resetColor();
+    
+    cout << "Fitur Masjid Raya Depok:" << endl;
+    cout << "• Kapasitas: 15.000 jamaah" << endl;
+    cout << "• Luas: 22.000 m²" << endl;
+    cout << "• Arsitek: Ridwan Kamil" << endl;
+    cout << "• Lokasi: Jl. Margonda Raya, Depok" << endl;
+    
+    cout << endl;
+    setColor(10);
+    cout << "Tekan Enter untuk melihat animasi Adzan...";
+    resetColor();
+    cin.get();
+    
+    // Animasi Adzan sederhana
+    for(int i = 0; i < 3; i++) {
+        clearScreen();
+        setColor(14);
+        cout << "                    MASJID RAYA DEPOK                    " << endl;
+        resetColor();
+        cout << "Allah Akbar! Allah Akbar!" << endl;
+        cout << "Ashhadu alla ilaha illallah!" << endl;
+        cout << "Ashhadu anna Muhammadar Rasulullah!" << endl;
+        sleep(1);
+    }
+}
+
+int main() {
+    cout << "Selamat datang di Program Visualisasi Masjid Raya Depok!" << endl;
+    cout << "Tekan Enter untuk melihat Masjid Raya Depok...";
+    cin.get();
+    
+    drawMasjidRayaDepok();
+    
+    cout << endl << "Terima kasih telah melihat Masjid Raya Depok!" << endl;
+    cout << "Semoga bermanfaat. Assalamualaikum." << endl;
+    
+    return 0;
+}
